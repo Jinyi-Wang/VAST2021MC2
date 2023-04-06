@@ -8,40 +8,6 @@ import numpy as np
 import pandas as pd
 matplotlib.use('TkAgg')
 
-'''
-TASK1
-仅使用信用卡和会员卡数据the credit and loyalty card data，识别最受欢迎的地点，以及受欢迎的时间。
-异常情况anomalies？建议如何纠正correct这些异常情况？
-
-DATA
-loyalty_data.csv：会员卡交易数据，1393行
-timestamp（日期）	location（企业名）	price（实际价格）	loyaltynum（编号，以 L 开头的 五位，唯一）
-
-cc_data.csv：信用卡和借记卡交易数据，1491行
-timestamp（日期和时间）	location（企业名）	price（实际价格）last4ccnum（credit or debit card的后4位数字）
-
-'''
-
-
-'''
-读csv文件，
-
-1。两个文件的内容是否一致：行数不同，计算根据总价格是否相同。
-结果不一致，不一致的地方有鬼。
-lyt: 284432.81
-cc:  309467.83
-
-2。从location获取交易地点，所有地点记录一个列表/dict/Linked Lists，
-并记录每个地点的：交易次数、交易额、交易时间（星期和时间）。
-
-3。寻找最受欢迎的地点，以及受欢迎的时间。
-
-记录34个地点每个地点的消费总额和消费总次数：地点-消费次数，地点-消费额 热力图 --- 寻找到最受欢迎的地点
-记录最受欢迎的地点的 消费时间段-消费次数，消费时间段-消费额 热力图 ---寻找到受欢迎的时间
-
-
-'''
-
 # Use structures to store each transaction
 class NodeLyt(object):
     def __init__(self, timestamp, price, loyaltynum):
